@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ninja Money</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 gold">
+				<h5>Your Gold: {{ gold }}</h5>
+			</div>
+		</div>
+		<div class="locations row">
+			<div class="col-md-3">
+				<form action= "/process_money" method="post">
+					<input type="hidden" name="bldg" value="farm">
+					<h3>Farm</h3>
+					<p>(earns 10-20 golds)</p>
+					<button type="submit">Find Gold!</button>
+				</form>
+			</div>
+			<div class=" col-md-3">
+				<form action= "/process_money" method="post">
+					<input type="hidden" name="bldg" value="cave">
+					<h3>Cave</h3>
+					<p>(earns 5-10 golds)</p>
+					<button type="submit">Find Gold!</button>
+				</form>
+			</div>
+			<div class="col-md-3">
+				<form action= "/process_money" method="post">
+					<input type="hidden" name="bldg" value="house">
+					<h3>House</h3>
+					<p>(earns 2-5 golds)</p>
+					<button type="submit">Find Gold!</button>
+				</form>
+			</div>
+			<div class="col-md-3">
+
+				<form action= "/process_money" method="post">
+					<input type="hidden" name="bldg" value="casino">
+					<h3>Casino</h3>
+					<p>(earns/takes 0-50 golds)</p>
+					<button type="submit">Find Gold!</button>
+				</form>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<form action= "/reset" method="post">
+					<button type="submit" name="reset">Reset!</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+			<h5>Activities:</h5>
+				<div class="comments log">
+					{{ log | safe }}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

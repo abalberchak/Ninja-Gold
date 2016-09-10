@@ -1,0 +1,28 @@
+.gold {
+	border: solid black 1px;
+	background-color: #ffffe6;
+}
+
+.locations {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.comments {
+	border: 1px solid black;
+}
+
+.log {
+	overflow: scroll;
+	width: 600px;
+	height: 200px;
+	margin: 10px;
+}
+
+.won {
+	color: green;
+}
+
+.lost {
+	color: red;
+}
